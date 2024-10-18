@@ -3,12 +3,14 @@ import ConnectSolana from "@/app/connectSolana";
 import SignIn from "@/app/signIn";
 import AccountInfo from "@/app/accountInfo";
 import Deposit from "@/app/deposit";
+import ConnectEvm from "@/app/connectEvm";
 
 export default function Home() {
   return (
       <AppProvider>
           <div className="px-5 py-3">
               <ConnectSolana/>
+              <ConnectEvm/>
           </div>
           <div className="px-5 py-3">
               <SignIn/>

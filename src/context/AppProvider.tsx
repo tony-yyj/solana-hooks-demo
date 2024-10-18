@@ -1,22 +1,25 @@
 'use client'
 import {OrderlyConfigProvider} from "@orderly.network/hooks";
 import {ReactNode} from "react";
-import {DefaultSolanaWalletAdapter} from "@orderly.network/default-solana-adapter";
 import InitSolana from "@/context/initSolana";
+import InitEvm from "@/context/initEvm";
 
 const brokerId = 'woofi_pro';
 
 export default function AppProvider({children}: { children: ReactNode }) {
-    const solanaWalletAdapter = new DefaultSolanaWalletAdapter();
     return (
-        <InitSolana>
+        <InitEvm>
 
-            <OrderlyConfigProvider walletAdapters={[solanaWalletAdapter]} brokerName={'WOOFiPro'} brokerId={brokerId}
-                                   networkId={"testnet"}>
-                {children}
+            <InitSolana>
 
-            </OrderlyConfigProvider>
-        </InitSolana>
+                <OrderlyConfigProvider  brokerName={'WOOFiPro'}
+                                       brokerId={brokerId}
+                                       networkId={"testnet"}>
+                    {children}
+
+                </OrderlyConfigProvider>
+            </InitSolana>
+        </InitEvm>
     )
 
 }
