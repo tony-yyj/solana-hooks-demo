@@ -2,13 +2,11 @@
 import {OrderlyConfigProvider} from "@orderly.network/hooks";
 import {ReactNode} from "react";
 import InitSolana from "@/context/initSolana";
-import InitEvm from "@/context/initEvm";
 
 const brokerId = 'woofi_pro';
 
 export default function AppProvider({children}: { children: ReactNode }) {
     return (
-        <InitEvm>
 
             <InitSolana>
 
@@ -19,7 +17,6 @@ export default function AppProvider({children}: { children: ReactNode }) {
 
                 </OrderlyConfigProvider>
             </InitSolana>
-        </InitEvm>
     )
 
 }

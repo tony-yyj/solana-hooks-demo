@@ -10,7 +10,7 @@ export default function Home() {
       <AppProvider>
           <div className="px-5 py-3">
               <ConnectSolana/>
-              <ConnectEvm/>
+              {/*<ConnectEvm/>*/}
           </div>
           <div className="px-5 py-3">
               <SignIn/>

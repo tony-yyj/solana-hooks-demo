@@ -16,8 +16,6 @@ export default function ConnectEvm(){
     const onConnect = () => {
         connect().then(res => {
             console.log('res', res);
-
-
         })
     }
 
